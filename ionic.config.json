@@ -1,6 +1,6 @@
 {
   "name": "AppCompra",
-  "app_id": "",
+  "app_id": "appcompra.silva.code",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
