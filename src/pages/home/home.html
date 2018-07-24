@@ -3,16 +3,24 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Cursos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-card *ngFor="let curso of lista">
+    <img [src]="curso.imagem" />
+    <ion-card-content>
+      <ion-card-title>
+        {{ curso.titulo }}
+      </ion-card-title>
+      <p>
+        {{ curso.descricao }}
+      </p>
+      <button ion-button block (click)="detalhes()">Sobre o Curso</button>
+      <button ion-button block color='secondary'>{{ curso.valor_txt }}</button>
+    </ion-card-content>
+  </ion-card>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
