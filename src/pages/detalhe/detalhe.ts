@@ -26,8 +26,8 @@ export class DetalhePage {
     console.log('ionViewDidLoad DetalhePage');
   }
 
-  abreAula(){
-    this.navCtrl.push(AulaPage);
+  abreAula(aula){
+    this.navCtrl.push(AulaPage, { dados: aula });
   }
 
 }

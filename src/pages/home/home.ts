@@ -15,33 +15,42 @@ export class HomePage {
       descricao: "Lorem ipsum dolor sit ame, consectur adsipiling adensi compi prior.",
       valor: 28.90,
       valor_txt: "R$ 28,90",
-      imagem: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Qo5--bvM7oPS_vil2vLZYAHaD4%26pid%3D15.1&f=1",
+      imagem: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.scotch.io%2F28644%2FWHpGscXqSlGtWdzCxpCE_laravel-simple-leader.png.jpg&f=1",
       aulas: [
         {
           id: "1",
           ordem: "1",
           titulo: "Apresentação do Curso",
           tempo: "4:00",
-          video: "https://www.youtube.com/watch?v=MuDpUnMEHGE&list=PLVSNL1PHDWvQ_qFQd5Kv3Uo4CB2vBZvLY&index=3&t=0s",
+          video: "https://www.youtube.com/embed/MuDpUnMEHGE",
         },
         {
           id: "2",
           ordem: "2",
           titulo: "Ferramentas",
           tempo: "2:29",
-          video: "https://www.youtube.com/watch?v=HODJOudXcE4&list=PLVSNL1PHDWvQ_qFQd5Kv3Uo4CB2vBZvLY&index=4&t=4s",
+          video: "https://www.youtube.com/embed/HODJOudXcE4",
         },
       ],
     },
     {
       id: 2,
+      titulo: "Ionic na Prática",
+      descricao: "Lorem ipsum dolor sit ame, consectur adsipiling adensi compi prior.",
+      valor: 21.99,
+      valor_txt: "R$ 21,99",
+      imagem: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Qo5--bvM7oPS_vil2vLZYAHaD4%26pid%3D15.1&f=1",
+      aulas: [],
+    },
+    {
+      id: 3,
       titulo: "Mestre no JS",
       descricao: "Lorem ipsum dolor sit ame, consectur adsipiling adensi compi prior.",
       valor: 57.99,
       valor_txt: "R$ 57,99",
       imagem: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zWhOGf_PgX0nRTLZLmFpGgHaEK%26pid%3D15.1&f=1",
       aulas: [],
-    }
+    },
   ];
 
   constructor(public navCtrl: NavController) {

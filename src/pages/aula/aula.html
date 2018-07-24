@@ -13,6 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <iframe width="100%" [src]="domSan.bypassSecurityTrustResourceUrl(aula.video)" frameborder="0"></iframe>
+
+  <div padding>
+    <h3>{{ aula?.titulo }}</h3>
+    <p>Duração: {{ aula.tempo }}</p>
+  </div>
 
 </ion-content>
