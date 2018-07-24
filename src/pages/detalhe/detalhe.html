@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Detalhe</ion-title>
+    <ion-title>Sobre o Curso</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-card>
+    <img [src]="curso?.imagem" />
+    <ion-card-content>
+      <ion-card-title>
+        {{ curso?.titulo }}
+      </ion-card-title>
+      <p>
+        {{ curso?.descricao }}
+      </p>
+      <button ion-button block color='secondary'>Comprar {{ curso?.valor_txt }}</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      Aulas:
+    </ion-list-header>
+    <button ion-item *ngFor="let aula of curso?.aulas" (click)="abreAula()">
+      #{{aula.id}} - {{aula.titulo}} - {{aula.tempo}}
+    </button>
+  </ion-list>
 
 </ion-content>
