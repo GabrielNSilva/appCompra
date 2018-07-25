@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DetalhePage } from '../detalhe/detalhe';
+import { Curso } from '../../interfaces/Curso';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +9,7 @@ import { DetalhePage } from '../detalhe/detalhe';
 })
 export class HomePage {
 
-  lista = [
+  lista: Curso[] = [
     {
       id: 1,
       titulo: "Laravel 5.5",
@@ -18,15 +19,15 @@ export class HomePage {
       imagem: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.scotch.io%2F28644%2FWHpGscXqSlGtWdzCxpCE_laravel-simple-leader.png.jpg&f=1",
       aulas: [
         {
-          id: "1",
-          ordem: "1",
+          id: 1,
+          ordem: 1,
           titulo: "Apresentação do Curso",
           tempo: "4:00",
           video: "https://www.youtube.com/embed/MuDpUnMEHGE",
         },
         {
-          id: "2",
-          ordem: "2",
+          id: 2,
+          ordem: 2,
           titulo: "Ferramentas",
           tempo: "2:29",
           video: "https://www.youtube.com/embed/HODJOudXcE4",

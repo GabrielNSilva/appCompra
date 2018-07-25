@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Aula } from '../../interfaces/Aula';
 
 /**
  * Generated class for the AulaPage page.
@@ -16,7 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AulaPage {
 
-  aula = {};
+  aula: Aula;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public domSan: DomSanitizer) {
     this.aula = this.navParams.get('dados');

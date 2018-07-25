@@ -32,7 +32,7 @@
     <ion-list-header>
       Aulas:
     </ion-list-header>
-    <button ion-item *ngFor="let aula of curso?.aulas" (click)="abreAula(aula)">
+    <button ion-item *ngFor="let aula of curso.aulas" (click)="abreAula(aula)">
       #{{aula.id}} - {{aula.titulo}} - {{aula.tempo}}
     </button>
   </ion-list>
