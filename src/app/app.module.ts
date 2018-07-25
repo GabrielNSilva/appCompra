@@ -7,9 +7,12 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { HomePage } from '../pages/home/home';
 import { DetalhePage } from '../pages/detalhe/detalhe';
 import { AulaPage } from '../pages/aula/aula';
+import { CursosProvider } from '../providers/cursos/cursos';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { AulaPage } from '../pages/aula/aula';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +36,8 @@ import { AulaPage } from '../pages/aula/aula';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CursosProvider
   ]
 })
 export class AppModule {}
