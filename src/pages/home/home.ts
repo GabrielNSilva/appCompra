@@ -23,6 +23,7 @@ export class HomePage {
       this.lista = res;
     }, erro => {
       console.log("Errooo: " + erro.message);
+
     });
   }
 
