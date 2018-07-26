@@ -1,5 +1,5 @@
 export interface Aula{
-  id: number,
+  id?: number,
   ordem: number,
   titulo: string,
   tempo: string,

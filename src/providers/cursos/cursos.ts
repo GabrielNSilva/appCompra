@@ -65,4 +65,16 @@ export class CursosProvider {
     return lista;
   }
 
+  allTeste(){
+    return this.http.get<Curso[]>("localhost:81/asdasd");
+  }
+
+  addTeste(curso: Curso){
+    return this.http.post<Curso>("localhost:81/asdasd",curso);
+  }
+
+  editTeste(curso: Curso){
+    return this.http.put<Curso>("localhost:81/asdasd/"+curso.id,curso);
+  }
+
 }

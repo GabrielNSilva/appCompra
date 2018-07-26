@@ -16,6 +16,16 @@ export class HomePage {
     this.lista = cursoProvider.all();
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CursosPage');
+
+    this.cursoProvider.allTeste().subscribe(res => {
+      this.lista = res;
+    }, erro => {
+      console.log("Errooo: " + erro.message);
+    });
+  }
+
   detalhes(item){
     this.navCtrl.push(DetalhePage, {dados: item});
   }

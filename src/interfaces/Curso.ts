@@ -1,7 +1,7 @@
 import { Aula } from "./Aula";
 
 export interface Curso{
-  id: number,
+  id?: number,
   titulo: string,
   descricao: string,
   valor: number,
