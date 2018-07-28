@@ -9,10 +9,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { CursosProvider } from '../providers/cursos/cursos';
+
 import { HomePage } from '../pages/home/home';
 import { DetalhePage } from '../pages/detalhe/detalhe';
 import { AulaPage } from '../pages/aula/aula';
-import { CursosProvider } from '../providers/cursos/cursos';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { CursosProvider } from '../providers/cursos/cursos';
     HomePage,
     DetalhePage,
     AulaPage,
+    CadastroPage,
   ],
   imports: [
     BrowserModule,
@@ -32,12 +36,14 @@ import { CursosProvider } from '../providers/cursos/cursos';
     HomePage,
     DetalhePage,
     AulaPage,
+    CadastroPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CursosProvider
+    CursosProvider,
+    UsuariosProvider
   ]
 })
 export class AppModule {}

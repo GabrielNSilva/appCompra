@@ -51,5 +51,13 @@
       "aulas": [],
       "id": 4
     }
+  ],
+  "usuarios": [
+    {
+      "nome": "Ingrid",
+      "email": "ingridfranlima@gmail.com",
+      "senha": "61160",
+      "id": 1
+    }
   ]
 }
