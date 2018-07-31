@@ -54,10 +54,16 @@
   ],
   "usuarios": [
     {
-      "nome": "Ingrid",
+      "nome": "Ind Lima",
       "email": "ingridfranlima@gmail.com",
-      "senha": "61160",
+      "senha": "000111",
       "id": 1
+    },
+    {
+      "nome": "Helen C",
+      "email": "helenc@yahoo.com",
+      "senha": "0123",
+      "id": 2
     }
   ]
 }
