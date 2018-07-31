@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { CursosProvider } from '../providers/cursos/cursos';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
@@ -33,6 +34,7 @@ import { EntrarPage } from '../pages/entrar/entrar';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
