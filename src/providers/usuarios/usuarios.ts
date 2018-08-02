@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { Usuario } from '../../interfaces/Usuario';
 
 /*
@@ -14,9 +15,30 @@ export class UsuariosProvider {
   url: string = "http://localhost:3000/usuarios/";
   headers: any;
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public storage: Storage
+  ) {
     console.log('Hello UsuariosProvider Provider');
     // this.headers = {"headers": {"authorization": "Bearer "+this.token}};
+
+    this.storage.set('nome', 'Biu');
+
+    this.storage.get('nome').then((val) => {
+      if (val) {
+        console.log('Nome: ', val);
+      } else {
+        console.log('Nao existe: ', val);
+      }
+    });
+  }
+
+  setStorage(chave, valor) {
+    this.storage.set(chave, valor);
+  }
+
+  getStorage(chave, valor) {
+    return this.storage.get(chave);
   }
 
   showUsuario(usuario: Usuario) {
