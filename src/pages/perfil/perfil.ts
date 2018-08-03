@@ -31,12 +31,21 @@ export class PerfilPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
 
-    this.usuario.id = 1;
+    // this.usuario.id = 2;
+    // this.usuariosProvider.setStorage('usuario', this.usuario);
 
-    this.usuariosProvider.showUsuario(this.usuario).subscribe(res => {
-      this.usuario = res;
-    }, erro => {
-      console.log("Errooo: " + erro.message);
+    this.usuariosProvider.getStorage('usuario').then(usuario => {
+      if (usuario) {
+        this.usuario = usuario;
+        this.usuariosProvider.showUsuario(this.usuario).subscribe(res => {
+          this.usuario = res;
+          this.usuariosProvider.setStorage('usuario', this.usuario);
+        }, erro => {
+          console.log("Errooo: " + erro.message);
+        });
+      } else {
+        this.cancelar();
+      }
     });
   }
 

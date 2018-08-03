@@ -22,22 +22,22 @@ export class UsuariosProvider {
     console.log('Hello UsuariosProvider Provider');
     // this.headers = {"headers": {"authorization": "Bearer "+this.token}};
 
-    this.storage.set('nome', 'Biu');
+    // this.storage.set('nome', 'Biu');
 
-    this.storage.get('nome').then((val) => {
-      if (val) {
-        console.log('Nome: ', val);
-      } else {
-        console.log('Nao existe: ', val);
-      }
-    });
+    // this.storage.get('nome').then((val) => {
+    //   if (val) {
+    //     console.log('Nome: ', val);
+    //   } else {
+    //     console.log('Nao existe: ', val);
+    //   }
+    // });
   }
 
   setStorage(chave, valor) {
     this.storage.set(chave, valor);
   }
 
-  getStorage(chave, valor) {
+  getStorage(chave) {
     return this.storage.get(chave);
   }
 
