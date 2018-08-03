@@ -19,7 +19,7 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages1: Array<{title: string, component: any}>;
-  pages2: Array<{title: string, component: any}>;
+  pages2: Array<{ title: string, component: any }>;
 
   constructor(
     public platform: Platform,
@@ -41,6 +41,14 @@ export class MyApp {
       { title: 'Perfil', component: PerfilPage },
     ];
 
+    this.usuariosProvider.getStorage('usuario').then(usuario => {
+      if (usuario) {
+        this.menuLogado();
+      } else {
+        this.menuDeslogado();
+      }
+    });
+
   }
 
   initializeApp() {
@@ -61,6 +69,15 @@ export class MyApp {
   logout(){
     this.usuariosProvider.setStorage('usuario', null);
     console.log('Deslogadoo');
+    this.menuDeslogado();
+  }
+
+  menuLogado() {
+    this.munuCtrl.enable(true, 'usuarioComLogin');
+    this.munuCtrl.enable(false, 'usuarioSemLogin');
+  }
+
+  menuDeslogado() {
     this.munuCtrl.enable(false, 'usuarioComLogin');
     this.munuCtrl.enable(true, 'usuarioSemLogin');
   }
