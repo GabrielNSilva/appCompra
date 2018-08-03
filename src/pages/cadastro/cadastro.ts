@@ -38,6 +38,7 @@ export class CadastroPage {
     console.log(this.usuario);
     this.usuariosProvider.addUsuario(this.usuario).subscribe(res => {
       console.log(res);
+      this.cancelar();
     }, erro => {
       console.log("Errooo: " + erro.message);
     });

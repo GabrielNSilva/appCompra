@@ -19,15 +19,15 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CursosPage');
 
-    let cur: Curso = {
-      "id": 2,
-      "titulo": "Ionic Básico",
-      "descricao": "Lorem ipsum dolor sit ame, consectur adsipiling adensi compi prior.",
-      "valor": 21.99,
-      "valor_txt": "R$ 21,99",
-      "imagem": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Qo5--bvM7oPS_vil2vLZYAHaD4%26pid%3D15.1&f=1",
-      "aulas": []
-    };
+    // let cur: Curso = {
+    //   "id": 2,
+    //   "titulo": "Ionic Básico",
+    //   "descricao": "Lorem ipsum dolor sit ame, consectur adsipiling adensi compi prior.",
+    //   "valor": 21.99,
+    //   "valor_txt": "R$ 21,99",
+    //   "imagem": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Qo5--bvM7oPS_vil2vLZYAHaD4%26pid%3D15.1&f=1",
+    //   "aulas": []
+    // };
 
     // this.cursoProvider.addTeste(cur).subscribe(res => {
     //   console.log(res);
@@ -47,11 +47,11 @@ export class HomePage {
     //   console.log("Errooo: " + erro.message);
     // });
 
-    this.cursoProvider.showTeste(cur).subscribe(res => {
-      console.log(res);
-    }, erro => {
-      console.log("Errooo: " + erro.message);
-    });
+    // this.cursoProvider.showTeste(cur).subscribe(res => {
+    //   console.log(res);
+    // }, erro => {
+    //   console.log("Errooo: " + erro.message);
+    // });
 
   }
 

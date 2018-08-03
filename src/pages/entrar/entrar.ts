@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { Usuario } from '../../interfaces/Usuario';
 import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 import { HomePage } from '../home/home';
@@ -22,7 +22,8 @@ export class EntrarPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public usuariosProvider: UsuariosProvider
+    public usuariosProvider: UsuariosProvider,
+    public munuCtrl: MenuController
   ) {
   }
 
@@ -34,12 +35,19 @@ export class EntrarPage {
     this.navCtrl.setRoot(HomePage);
   }
 
+  ativaMenuLogin(){
+    this.munuCtrl.enable(true, 'usuarioComLogin');
+    this.munuCtrl.enable(false, 'usuarioSemLogin');
+  }
+
   loginUsuario() {
     console.log(this.usuario);
     this.usuariosProvider.loginUsuario(this.usuario).subscribe(res => {
       this.usuariosProvider.setStorage('usuario', res);
-      console.log(res);
+      // console.log(res);
       // this.usuario = res;
+      this.ativaMenuLogin();
+      this.cancelar();
     }, erro => {
       console.log("Errooo: " + erro.message);
     });
