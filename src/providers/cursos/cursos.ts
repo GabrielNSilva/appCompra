@@ -12,6 +12,8 @@ import { Curso } from '../../interfaces/Curso';
 @Injectable()
 export class CursosProvider {
 
+  url: string = "http://localhost:3000/cursos/";
+
   constructor(public http: HttpClient) {
     console.log('Hello CursosProvider Provider');
   }
@@ -66,15 +68,23 @@ export class CursosProvider {
   }
 
   allTeste(){
-    return this.http.get<Curso[]>("localhost:81/asdasd");
+    return this.http.get<Curso[]>(this.url);
+  }
+
+  showTeste(curso: Curso){
+    return this.http.get<Curso>(this.url+curso.id);
   }
 
   addTeste(curso: Curso){
-    return this.http.post<Curso>("localhost:81/asdasd",curso);
+    return this.http.post<Curso>(this.url, curso);
   }
 
   editTeste(curso: Curso){
-    return this.http.put<Curso>("localhost:81/asdasd/"+curso.id,curso);
+    return this.http.put<Curso>(this.url+curso.id, curso);
+  }
+
+  deleteTeste(curso: Curso){
+    return this.http.delete<Curso>(this.url+curso.id);
   }
 
 }

@@ -8,11 +8,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
+import { CursosProvider } from '../providers/cursos/cursos';
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
 
 import { HomePage } from '../pages/home/home';
 import { DetalhePage } from '../pages/detalhe/detalhe';
 import { AulaPage } from '../pages/aula/aula';
-import { CursosProvider } from '../providers/cursos/cursos';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { EntrarPage } from '../pages/entrar/entrar';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,15 @@ import { CursosProvider } from '../providers/cursos/cursos';
     HomePage,
     DetalhePage,
     AulaPage,
+    CadastroPage,
+    PerfilPage,
+    EntrarPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,12 +42,16 @@ import { CursosProvider } from '../providers/cursos/cursos';
     HomePage,
     DetalhePage,
     AulaPage,
+    CadastroPage,
+    PerfilPage,
+    EntrarPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CursosProvider
+    CursosProvider,
+    UsuariosProvider
   ]
 })
 export class AppModule {}

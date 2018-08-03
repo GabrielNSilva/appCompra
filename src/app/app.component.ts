@@ -1,9 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { EntrarPage } from '../pages/entrar/entrar';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,15 +18,36 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages1: Array<{title: string, component: any}>;
+  pages2: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public usuariosProvider: UsuariosProvider,
+    public munuCtrl: MenuController
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage }
+    this.pages1 = [
+      { title: 'Home', component: HomePage },
+      { title: 'Entrar', component: EntrarPage },
+      { title: 'Cadastro', component: CadastroPage },
     ];
+    this.pages2 = [
+      { title: 'Home', component: HomePage },
+      { title: 'Perfil', component: PerfilPage },
+    ];
+
+    this.usuariosProvider.getStorage('usuario').then(usuario => {
+      if (usuario) {
+        this.menuLogado();
+      } else {
+        this.menuDeslogado();
+      }
+    });
 
   }
 
@@ -38,5 +64,21 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  logout(){
+    this.usuariosProvider.setStorage('usuario', null);
+    console.log('Deslogadoo');
+    this.menuDeslogado();
+  }
+
+  menuLogado() {
+    this.munuCtrl.enable(true, 'usuarioComLogin');
+    this.munuCtrl.enable(false, 'usuarioSemLogin');
+  }
+
+  menuDeslogado() {
+    this.munuCtrl.enable(false, 'usuarioComLogin');
+    this.munuCtrl.enable(true, 'usuarioSemLogin');
   }
 }
